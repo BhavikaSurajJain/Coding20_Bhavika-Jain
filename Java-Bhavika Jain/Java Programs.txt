@@ -1,0 +1,395 @@
+Question 1: Write a code to reverse a number.
+
+ public class Main
+{
+    public static void main(String args[])
+    {
+        int n=1234,x;
+        int rev=0;
+        while(n!=0){
+            x=n%10;
+            rev=rev*10+x;
+            n=n/10;
+        }
+        System.out.println(rev);
+    }
+}
+______________________________________________________________________________________________
+Question 2:Write a code to find  the fibonacci series upto nth term.
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        int n=10, i,a=0,b=1,c=0;
+        for(i=1;i<=n;i++){
+            System.out.print(a + " ");
+            c=a+b;
+            a=b;
+            b=c;
+        }
+    }
+}
+_____________________________________________________________________________________________
+Question 3:check whether or not the num is palindrome.
+
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        int num,rev=0,x;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a num");
+        num=sc.nextInt();
+        int temp=num;
+        while(num!=0){
+            x=num%10;
+            rev=rev*10+x;
+            num=num/10;
+        }
+        if(num==rev){
+            System.out.println("num is palindrome");
+        }
+        else{
+             System.out.println("num is not palindrome");
+        }
+    }
+}
+________________________________________________________________________________________
+Question 4:Sorting first half of array in Ascending order and second half in Descending order
+
+import java.util.Scanner;
+ class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {3,2,1,6,7,8};
+        int n = arr.length;
+        int temp;
+        for (int i = 0; i <= n - 1; i++) {
+            for (int j = 0; j < n / 2; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            for (int j = n / 2; j < n - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i] + " ");
+        }
+    }
+}
+______________________________________________________________________________________________
+Question 5:Program to reverse original array.
+
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        int[] arr={1,2,3,4,5};
+        
+         for (int i = arr.length-1; i >= 0; i--) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }
+}
+_____________________________________________________________________________________________________
+Question 6:program to print unique number in an array
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        int[] arr={1,2,3,4,1,6,7,4,5};
+        int i,j;
+        for (i = 0; i < arr.length; i++){
+            for ( j = 0; j < i; j++){
+            if (arr[i] == arr[j])
+                break;
+            }
+            if (i == j)
+            System.out.print( arr[i] + " ");
+        }
+    }
+}
+_________________________________________________________________________________________
+question 7:Write a program to find common elements between two arrays.
+
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        int[] a1={1,2,5,8,7,9};
+        int[] a2={3,2,6,7,10,1};
+        
+       for(int i=0;i<a1.length;i++){
+           for(int j=0;j<a2.length;j++){
+               if(a1[i]==a2[j]){
+                 System.out.print( a1[i] + " ");  
+             }
+          }
+        }
+    }
+}
+_________________________________________________________________________________________________
+question 8:Write a program to count the number of even and odd integers in a given array of integers.
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        int[] a={1,2,5,8,7,9};
+        int odd=0,even=0;
+    
+        for(int i=0;i<a.length;i++){  
+            if(a[i]%2==0){  
+                odd=odd+1;  
+            }  
+        }  
+        for(int i=0;i<a.length;i++){  
+            if(a[i]%2!=0){  
+               even=even+1; 
+            }  
+        }
+        System.out.println("odd numbers"+odd);
+        System.out.println("even numbers"+even);
+}
+}
+___________________________________________________________________________________________________
+question 9:Write a program to find a missing number in an array.
+
+import java.util.Scanner;
+ class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {1,2,3,4,6,7,8};
+        int n = arr.length;
+         int sum=(n+1)*(n+2)/2;   
+      for(int i=0;i<n;i++)
+      {
+          sum=sum-arr[i];
+      }
+      System.out.println("Missing Element is "+sum);  
+   }
+ }
+_____________________________________________________________________________________________________________
+Question 11:remove all the characters from string except alphabets.
+
+ class Main {
+    public static void main(String[] args) {
+        String input = "hey12how 34are54you";
+        
+       
+        String result = input.replaceAll("[^a-zA-Z]", "");
+        
+        
+        System.out.println("String with only alphabets: " + result);
+    }
+}
+________________________________________________________________________________________________________
+question 12: Program to rotate array elements left by 1 position.
+
+class main {
+    public static void main(String[] args) {
+        int [] arr = new int [] {1, 2, 3, 4, 5,6};
+        int n = 3;
+        System.out.println("Original array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        for(int i = 0; i < n; i++){
+            int j, first;
+            first = arr[0];
+            for(j = 0; j < arr.length-1; j++){
+                arr[j] = arr[j+1];
+            }
+            arr[j] = first;
+        }
+        System.out.println();
+        System.out.println("Array after left rotation: ");
+        for(int i = 0; i< arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+_______________________________________________________________________________________
+Question 13:Program to rotate array elements by Kth position left.
+
+import java.util.*;
+ class Main {
+  public static void Rotatetoright(int[] arr, int n, int k) {
+    if (n == 0)
+      return;
+    k = k % n;
+    if (k > n)
+      return;
+    int[] temp = new int[k];
+    for (int i = n - k; i < n; i++) {
+      temp[i - n + k] = arr[i];
+    }
+    for (int i = n - k - 1; i >= 0; i--) {
+      arr[i + k] = arr[i];
+    }
+    for (int i = 0; i < k; i++) {
+      arr[i] = temp[i];
+    }
+  }
+  public static void main(String args[]) {
+    int n = 7;
+    int[] arr = {1,2,3,4,5,6,7};
+    int k = 2;
+    Rotatetoright(arr, n, k);
+    System.out.println("After Rotating the elements to right ");
+    for (int i = 0; i < n; i++) {
+      System.out.print(arr[i] + " ");
+    }
+  }
+}
+_____________________________________________________________________________________________________
+Question 14; Program to remove duplicate elements from the array.
+
+ class main {
+
+    public static int removeduplicates(int a[], int n)
+    {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+
+        // creating another array for only storing
+        // the unique elements
+        int[] temp = new int[n];
+        int j = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (a[i] != a[i + 1]) {
+                temp[j++] = a[i];
+            }
+        }
+
+        temp[j++] = a[n - 1];
+
+        // Changing the original array
+        for (int i = 0; i < j; i++) {
+            a[i] = temp[i];
+        }
+
+        return j;
+    }
+    public static void main(String[] args)
+    {
+        int a[] = { 1, 1, 2, 2, 2 };
+        int n = a.length;
+
+        n = removeduplicates(a, n);
+
+        // Printing The array elements
+        for (int i = 0; i < n; i++)
+            System.out.print(a[i] + " ");
+    }
+}
+___________________________________________________________________________________________________
+Question 15:Program to find string is anagram or not.
+
+import java.util.Arrays;
+
+ class main {
+    public static void main(String[] args) {
+        String s1 = "care";
+        String s2 = "race";
+        char c1[]= s1.toCharArray();
+        char c2[] = s2.toCharArray();
+        if(c1.length != c2.length){
+            System.out.println("not anagram");
+            System.exit(0);
+        }
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        for(int i = 0;i<c1.length;i++){
+            if(c1[i]!=c2[i]){
+                System.out.println("not anagram");
+                System.exit(0);
+            }
+        }
+        System.out.println("It is anagram");
+    }
+}
+
+___________________________________________________________________________________________________________
+Question 17: Program to check number Armstrong or not.
+
+public class JavaExample {
+
+    public static void main(String[] args) {
+
+        int num = 370, number, temp, total = 0;
+
+        number = num;
+        while (number != 0)
+        {
+            temp = number % 10;
+            total = total + temp*temp*temp;
+            number /= 10;
+        }
+
+        if(total == num)
+            System.out.println(num + " is an Armstrong number");
+        else
+            System.out.println(num + " is not an Armstrong number");
+    }
+}
+___________________________________________________________________________________________________
+Question 18: How to calculate the number of vowels and consonants in a string?
+
+
+public class Main
+{
+     public static void main(String []args)
+     {
+        String str="this is a string";    
+        System.out.println("The String is: "+str);
+        
+        int vcount=0,ccount=0;   
+        str=str.toLowerCase();          
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u')
+            vcount++;  
+            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z')
+            ccount++;  
+        }        
+        
+        System.out.println("The total number of vowels is: "+vcount);
+       
+        System.out.println("The total number of consonants is: "+ccount);        
+     }
+}
+_______________________________________________________________________________________________________
+Question 19: Find the index of two array elements whose sum is equal to the given value.
+
+class main {
+    public static void main(String[] args) {
+        int [] arr = new int [] {1, 2, 3, 4, 5};
+        // int n =arr.length;
+        int x=4;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<i;i++){
+                if(arr[i]+arr[j]==x){
+                    System.out.println("the two nums are "+arr[i]+" and "+arr[j]);
+                    break;
+                }
+            }
+        }
+    }
+}
